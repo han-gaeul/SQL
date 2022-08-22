@@ -187,12 +187,7 @@ InvoiceId  CustomerId
 | 단, InvoiceLineId, InvoiceId, CustomerId 컬럼을 `InvoiceId` 기준으로 내림차순으로 5개만 출력하세요.
 
 ```sqlite
-select invoice_items.InvoiceLineId, invoices.InvoiceId, customers.CustomerId 
-from invoice_items 
-inner join invoices on invoice_items.InvoiceId = invoices.InvoiceId 
-inner join customers on invoices.CustomerId = customers.CustomerId 
-order by invoice_items.InvoiceId desc 
-limit 5;
+select invoice_items.InvoiceLineId, invoices.InvoiceId, customers.CustomerId from invoice_items inner join invoices on invoice_items.InvoiceId = invoices.InvoiceId inner join customers on invoices.CustomerId = customers.CustomerId order by invoice_items.InvoiceId desc limit 5;
 ```
 
 ```sqlite
